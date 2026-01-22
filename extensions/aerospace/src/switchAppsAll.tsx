@@ -36,13 +36,19 @@ export default function Command() {
       {Object.entries(groupedByWorkspace).map(([workspaceName, group]) => (
         <List.Section key={workspaceName} title={`Workspace ${workspaceName} - ${group.monitor}`}>
           {group.windows.map((window) => {
-            // Swap title and subtitle based on preference
+            const windowTitle = window["window-title"] || "";
+            const appName = window["app-name"];
+            
             const title = preferences.searchByWindowTitle 
-              ? (window["window-title"] || window["app-name"]) 
-              : window["app-name"];
+              ? (windowTitle || appName) 
+              : appName;
             const subtitle = preferences.searchByWindowTitle 
-              ? window["app-name"] 
-              : (window["window-title"] || "");
+              ? appName 
+              : windowTitle;
+
+            const titleTokens = windowTitle.split(/[\s\-_|:]+/).filter(token => token.length > 0);
+            const appTokens = appName.split(/[\s\-_]+/).filter(token => token.length > 0);
+            const keywords = [...appTokens, ...titleTokens, appName, windowTitle];
 
             return (
               <List.Item
@@ -50,7 +56,7 @@ export default function Command() {
                 title={title}
                 subtitle={subtitle}
                 icon={{ fileIcon: window["app-path"] }}
-                keywords={[window["app-name"], window["window-title"] || ""]} // Ensure both are searchable
+                keywords={keywords}
                 actions={
                   <ActionPanel>
                     <Action

@@ -47,9 +47,9 @@
           "name": "searchByWindowTitle",
           "type": "checkbox",
           "required": false,
-          "title": "Search by Window Title",
-          "label": "Show window title as primary search field",
-          "description": "When enabled, window titles appear first (better for searching by document/tab names). When disabled, app names appear first (better for searching by application).",
+          "title": "Prioritize Window Titles",
+          "label": "Show window title first (e.g., document/tab names before app name)",
+          "description": "Display window titles as the primary field. Useful for finding specific documents, browser tabs, or terminal sessions. Search works on both app and window names regardless of this setting.",
           "default": false
         }
       ]
@@ -64,9 +64,9 @@
           "name": "searchByWindowTitle",
           "type": "checkbox",
           "required": false,
-          "title": "Search by Window Title",
-          "label": "Show window title as primary search field",
-          "description": "When enabled, window titles appear first (better for searching by document/tab names). When disabled, app names appear first (better for searching by application).",
+          "title": "Prioritize Window Titles",
+          "label": "Show window title first (e.g., document/tab names before app name)",
+          "description": "Display window titles as the primary field. Useful for finding specific documents, browser tabs, or terminal sessions. Search works on both app and window names regardless of this setting.",
           "default": false
         }
       ]
