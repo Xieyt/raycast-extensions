@@ -41,13 +41,35 @@
       "name": "switchAppsFocused",
       "title": "Switch Apps in Focused Workspace",
       "description": "Switch between apps in the focused workspace",
-      "mode": "view"
+      "mode": "view",
+      "preferences": [
+        {
+          "name": "searchByWindowTitle",
+          "type": "checkbox",
+          "required": false,
+          "title": "Search by Window Title",
+          "label": "Show window title as primary search field",
+          "description": "When enabled, window titles appear first (better for searching by document/tab names). When disabled, app names appear first (better for searching by application).",
+          "default": false
+        }
+      ]
     },
     {
       "name": "switchAppsAll",
       "title": "Switch Apps in All Workspaces",
       "description": "Switch between apps in all workspaces",
-      "mode": "view"
+      "mode": "view",
+      "preferences": [
+        {
+          "name": "searchByWindowTitle",
+          "type": "checkbox",
+          "required": false,
+          "title": "Search by Window Title",
+          "label": "Show window title as primary search field",
+          "description": "When enabled, window titles appear first (better for searching by document/tab names). When disabled, app names appear first (better for searching by application).",
+          "default": false
+        }
+      ]
     }
   ],
   "dependencies": {
